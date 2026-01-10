@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | CitizenConnect</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="sign.css" />
+  </head>
+  <body>
+    <div class="section">
+      <div class="description">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e3e3e3"
+          >
+            <path
+              d="M480-40 192-256q-15-11-23.5-28t-8.5-36v-480q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v480q0 19-8.5 36T768-256L480-40Zm0-100 240-180v-480H240v480l240 180Zm-42-220 226-226-56-58-170 170-84-84-58 56 142 142Zm42-440H240h480-240Z"
+            />
+          </svg>
+        </div>
+        <h1 class="title">Welcome to CitizenConnect</h1>
+        <p class="subtitle">Join CitizenConnect today.</p>
+      </div>
+      <div class="container">
+        <form>
+          <div class="input-group">
+            <label for="fname">Full Name</label>
+            <div class="input-wrapper">
+              <input type="text" name="fname" placeholder="John Doe" required />
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <div class="input-wrapper">
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="pnumber">Phone Number</label>
+            <div class="input-wrapper">
+              <input
+                type="number"
+                name="pnumber"
+                placeholder="+1 (555) 000-000"
+                required
+              />
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                name="password"
+                placeholder=".........."
+                required
+              />
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="cpassword">Confirm Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                name="cpassword"
+                placeholder="........."
+                required
+              />
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+          </div>
+          <button type="create" class="btn">Create Account</button>
+        </form>
+        <div class="signin">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+        <a href="citizenconnect.html" class="back-home">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          Back to Home.
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

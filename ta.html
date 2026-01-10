@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with Age Groups and Gender</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .age-header {
+        background-color: #d0e4f7;
+      }
+      .gender-header {
+        background-color: #e6f3ff;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        height: 100px;
+        white-space: nowrap;
+      }
+      .cell-label {
+        background-color: #f9f9f9;
+        font-weight: bold;
+      }
+      .total-row {
+        font-weight: bold;
+        background-color: #ffffcc;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- First row: Age group headers spanning two columns each -->
+      <tr>
+        <th rowspan="2" class="cell-label">Cell</th>
+        <th colspan="2" class="age-header">0-15</th>
+        <th colspan="2" class="age-header">16-25</th>
+        <th colspan="2" class="age-header">26-35</th>
+        <th colspan="2" class="age-header">36-45</th>
+        <th colspan="2" class="age-header">46-55</th>
+        <th colspan="2" class="age-header">56-above</th>
+      </tr>
+
+      <!-- Second row: Gender labels (Men/Women) -->
+      <tr>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+        <td class="gender-header">Men</td>
+        <td class="gender-header">Women</td>
+      </tr>
+
+      <!-- Third row: Data for Cell A -->
+      <tr>
+        <td class="cell-label">A</td>
+        <td>800</td>
+        <td>700</td>
+        <td>700</td>
+        <td>800</td>
+        <td>600</td>
+        <td>1000</td>
+        <td>900</td>
+        <td>900</td>
+        <td>1200</td>
+        <td>2500</td>
+        <td>800</td>
+        <td>800</td>
+      </tr>
+
+      <!-- Fourth row: Data for Cell B -->
+      <tr>
+        <td class="cell-label">B</td>
+        <td>800</td>
+        <td>700</td>
+        <td>700</td>
+        <td>800</td>
+        <td>600</td>
+        <td>1000</td>
+        <td>900</td>
+        <td>900</td>
+        <td>1200</td>
+        <td>2500</td>
+        <td>800</td>
+        <td>800</td>
+      </tr>
+
+      <!-- Total row -->
+      <tr class="total-row">
+        <td class="cell-label">Total</td>
+        <td colspan="2">3000</td>
+        <td colspan="2">4000</td>
+        <td colspan="2">6000</td>
+        <td colspan="2">8000</td>
+        <td colspan="2">9500</td>
+        <td colspan="2">12000</td>
+      </tr>
+    </table>
+  </body>
+</html>

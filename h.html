@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with 5 Columns and Split Cell in First Row</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f0f4f8;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: #4a7afe;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* First row: one cell spans 2 columns, others are single */
+        .split-first th:nth-child(1) {
+            background-color: #34c759;
+        }
+
+        .main-title {
+            background-color: #6c5ce7;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4fc;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <!-- First row: 5 columns total, first cell splits into 2 sub-columns -->
+        <tr class="split-first">
+            <th colspan="2">Product Info</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+        </tr>
+
+        <!-- Sub-header row for the split cell -->
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>(USD)</th>
+            <th>Units</th>
+            <th>Availability</th>
+        </tr>
+
+        <!-- Title row spanning all 5 columns -->
+        <tr>
+            <th colspan="5" class="main-title">Inventory Summary - November 2025</th>
+        </tr>
+
+        <!-- Sample data rows -->
+        <tr>
+            <td>Laptop Pro</td>
+            <td>LTX-001</td>
+            <td>$1,299</td>
+            <td>45</td>
+            <td><span style="color: #2ecc71; font-weight: bold;">In Stock</span></td>
+        </tr>
+        <tr>
+            <td>Wireless Mouse</td>
+            <td>MSW-112</td>
+            <td>$39</td>
+            <td>120</td>
+            <td><span style="color: #2ecc71; font-weight: bold;">In Stock</span></td>
+        </tr>
+        <tr>
+            <td>USB-C Hub</td>
+            <td>HUB-004</td>
+            <td>$59</td>
+            <td>0</td>
+            <td><span style="color: #e74c3c; font-weight: bold;">Out of Stock</span></td>
+        </tr>
+        <tr>
+            <td>HD Webcam</td>
+            <td>CAM-208</td>
+            <td>$89</td>
+            <td>78</td>
+            <td><span style="color: #2ecc71; font-weight: bold;">In Stock</span></td>
+        </tr>
+    </table>
+
+</body>
+</html>

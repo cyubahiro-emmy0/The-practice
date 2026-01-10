@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rwanda Coding Academy Campus Map</title>
+  <!-- :white_check_mark: Leaflet Map Engine -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: #FFFFFF;
+      color: #111827;
+    }
+    header {
+      background: #2563EB;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    header img {
+      height: 36px;
+      margin-right: 8px;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+    #sidebar {
+      width: 320px;
+      background: #F8FAFF;
+      border-right: 2px solid #E2E8F0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #sidebar h2 {
+      color: #2563EB;
+      margin-top: 0;
+      font-size: 22px;
+    }
+    #map {
+      flex: 1;
+      height: 100%;
+    }
+    button {
+      background: #2563EB;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      width: 100%;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #1D4ED8;
+      transform: translateY(-1px);
+    }
+    .info-box {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      margin-bottom: 15px;
+    }
+    .coords {
+      font-size: 13px;
+      color: #555;
+      margin-top: 8px;
+    }
+    footer {
+      background: #F3F4F6;
+      text-align: center;
+      font-size: 12px;
+      color: #6B7280;
+      padding: 8px;
+    }
+    /* Loading overlay */
+    #loader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #2563EB;
+      z-index: 9999;
+      transition: opacity 0.3s;
+    }
+    /* Mobile view */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #E2E8F0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">Loading RCA Map…</div>
+  <header>
+    <span>:school: Rwanda Coding Academy – Campus Map</span>
+  </header>
+  <main>
+    <div id="sidebar">
+      <div>
+        <h2>Explore RCA</h2>
+        <div class="info-box">
+          <p>Click on any marker to view building details. Use the buttons below to explore or export data.</p>
+        </div>
+        <button id="fitBoundsBtn">Zoom to Campus</button>
+        <button id="exportBtn">Export GeoJSON</button>
+        <div class="coords" id="coordsDisplay">
+          Move the mouse over the map to see coordinates.
+        </div>
+      </div>
+      <div style="text-align:center; font-size:12px; color:#777;">
+        <p>Made with :heart: by RCA Students</p>
+      </div>
+    </div>
+    <div id="map"></div>
+  </main>
+  <footer>© 2025 Rwanda Coding Academy – GIS Project</footer>
+  <script>
+    // --- Remove loader once page loads ---
+    window.onload = () => {
+      document.getElementById("loader").style.opacity = "0";
+      setTimeout(() => (document.getElementById("loader").style.display = "none"), 400);
+    };
+    // --- Initialize Map ---
+    const map = L.map("map").setView([-1.6015, 29.5165], 17);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
+    // --- RCA Locations ---
+    const rcaLocations = [
+      { name: "North Corner", coords: [-1.5997, 29.5150] },
+      { name: "Main Office & Labs", coords: [-1.6006, 29.5144] },
+      { name: "TVET Workshop", coords: [-1.6011, 29.5153] },
+      { name: "Classes & Labs", coords: [-1.6017, 29.5156] },
+      { name: "Dining Hall", coords: [-1.6020, 29.5158] },
+      { name: "University Construction", coords: [-1.6011, 29.5169] },
+      { name: "Boys Dorm", coords: [-1.6011, 29.5175] },
+      { name: "Staff Hostel", coords: [-1.6020, 29.5181] },
+      { name: "Volleyball & Basketball Courts", coords: [-1.6017, 29.5175] },
+      { name: "Football Pitch", coords: [-1.6028, 29.5175] },
+      { name: "Girls Dorm", coords: [-1.6028, 29.5164] },
+      { name: "Boundary 1", coords: [-1.6033, 29.5164] },
+      { name: "Boundary 2", coords: [-1.6022, 29.5186] },
+      { name: "Boundary 3", coords: [-1.6033, 29.5181] },
+      { name: "Boundary 4", coords: [-1.6003, 29.5169] },
+    ];
+    // --- Add Markers ---
+    const markers = [];
+    rcaLocations.forEach((loc) => {
+      const marker = L.marker(loc.coords)
+        .bindPopup(`<b>${loc.name}</b>`)
+        .addTo(map);
+      markers.push(marker);
+    });
+    // --- Draw Boundary ---
+    const boundaryPoints = [
+      [-1.6003, 29.5169],
+      [-1.5997, 29.5150],
+      [-1.6006, 29.5144],
+      [-1.6017, 29.5156],
+      [-1.6020, 29.5158],
+      [-1.6033, 29.5164],
+      [-1.6033, 29.5181],
+      [-1.6022, 29.5186],
+      [-1.6011, 29.5175],
+      [-1.6003, 29.5169],
+    ];
+    const boundary = L.polygon(boundaryPoints, {
+      color: "#2563EB",
+      fillColor: "#60A5FA",
+      fillOpacity: 0.3,
+      weight: 2,
+    }).addTo(map);
+    boundary.bindPopup("RCA School Boundary");
+    // --- Buttons ---
+    document.getElementById("fitBoundsBtn").onclick = () => {
+      map.fitBounds(boundary.getBounds());
+    };
+    document.getElementById("exportBtn").onclick = () => {
+      const features = rcaLocations.map((loc) => ({
+        type: "Feature",
+        properties: { name: loc.name },
+        geometry: { type: "Point", coordinates: [loc.coords[1], loc.coords[0]] },
+      }));
+      const geojson = {
+        type: "FeatureCollection",
+        features,
+      };
+      const blob = new Blob([JSON.stringify(geojson, null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "rca_map.geojson";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+    // --- Show live coordinates ---
+    const coordsDisplay = document.getElementById("coordsDisplay");
+    map.on("mousemove", (e) => {
+      coordsDisplay.textContent = `Lat: ${e.latlng.lat.toFixed(6)}, Lng: ${e.latlng.lng.toFixed(6)}`;
+    });
+  </script>
+</body>
+</html>

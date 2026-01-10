@@ -1,0 +1,202 @@
+*{
+    box-sizing: border-box;
+}
+body {
+   color: #222;
+}
+
+#wrapper{
+    background-color:#ddd;
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: rgb(117, 9, 218);
+    display: block;
+    width: 100%;
+    z-index: 10;
+}
+
+#navbar nav, .row{
+    display: flex;
+}
+#navbar nav a{
+    flex: 0 0 25vw;
+    text-align: center;
+    font-size: 2em;
+    color: #eee;
+    text-decoration: none;
+    height: 60px;
+    line-height: 2em;
+    cursor: pointer;
+}
+#navbar nav a:hover{
+    background-color: darkblue;
+    text-decoration: underline;
+}
+#homeREMOVE{
+    background-image:url(https://picsum.photos/seed/picsum/200/300);
+    background-size: cover;
+}
+.active{
+    background-color: red;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+}
+.page{
+    height:auto;
+    min-height: 100vh;
+    padding: 60px 10px;
+    background-color: #eee;
+}
+.jumbotron{
+    background-color: rgb(117, 9, 218);
+    width: 80%;
+    margin: 100px auto;
+    border: 5px solid white;
+    text-align: center;
+    border-radius:10px;
+    padding: 20px;
+}
+.jumbtron h2{
+    text-transform: uppercase;
+    font-size: 3em;
+    color: black;
+}
+.jumbtron h3{
+    font-size: 2em;
+    color: #222;
+}
+.col{
+    flex-direction: row;
+    border: 1px solid;
+    padding: 10px;
+    min-height: 100vh;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    flex: 0 0 30%;
+    background-color: white;
+    border-radius:20px;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 10px 0;
+}
+.card img{
+    max-width: 100%;
+}
+.card h3{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0;
+    margin: 0;
+}
+.card .output{
+    padding: 0 20px 20px;
+}
+.card .output >button{
+    background-color: dodgerblue;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+.card .output >button:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    animation: ease;
+}
+.main{
+    background-color: whitesmoke;
+    min-height: 100vh;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.page > h2{
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding: 8px;
+    font-size: 2em;
+}
+#message{
+    width: 100%;
+}
+.myform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+    text-align: left;
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.rowform{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+}
+.rowform .name, .rowform .email{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 45%;
+}
+.myform .subject, .message{
+    width: 80%;
+    margin: 0 auto;
+}
+label{
+    color: white;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.footer{
+    min-height: 200px;
+    text-align: center;
+    color: #ddd;
+    font-size: 2em;
+    background-color: black;
+}
+@keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+/*Responsive Design*/
+@media all and(max-width:640px){
+    #navbar nav a{
+        font-size:1.2em;
+        height: 30px;
+    }
+    #navbar{
+        height: 30px;
+    }
+    .cards{
+        flex: auto;
+    }
+}
