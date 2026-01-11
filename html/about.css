@@ -66,4 +66,49 @@ div{
     gap: 30px;
     align-items: center;
 }
+span{
+    color: var(--dark-blue);
+}
+.btn-text{
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative; /* Added to fix the underline position issue */
+}
+.btn-text::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px; /* Added thickness */
+    left: 0;     /* Added alignment */
+    bottom: -5px;
+    background-color: var(--primary-blue);
+    transition: width 0.5s ease;
+}
+
+/* Hover Effect: The line "draws" out */
+.btn-text:hover::after {
+    width: 100%;
+}
+.btn-text.active {
+    color: var(--primary-blue);
+}
+
+.btn-text.active::after {
+    width: 0%;
+}
+.btn-primary{
+    background: var(--btn-gray);
+    color: var(--text-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+.btn-primary:hover{
+    background: var(--btn-gray-hover);
+}
+
 
