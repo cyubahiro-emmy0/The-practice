@@ -13,6 +13,7 @@
     --border-transparent: transparent;
     --overlay-gradient: #0001;
     --overlay-solid: #000;
+    --bg-header:rgb(26, 26, 26);
 }
 
 *{
@@ -29,6 +30,9 @@ body{
     line-height: 1.6;
     color: var(--text-dark);
     background: radial-gradient(circle, var(--bg-gradient), var(--bg-dark));
+}
+span{
+    color: var(--dark-blue);
 }
 .total{
     border-radius: 16px;
@@ -48,7 +52,7 @@ body{
 }
 .header{
     padding: 1rem 0;
-    background: var(--border-transparent);
+    background: var(--bg-header);
     border-bottom: 1px solid var(--border-transparent);
     position: sticky;
     top: 0;

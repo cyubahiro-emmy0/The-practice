@@ -1,8 +1,10 @@
 :root {
     --primary-blue: #007bff;
 
-    /**/
+    /*Box-shadows*/
     --dark-blue: rgb(4, 4, 197);
+    --box-shadow:rgb(117, 117, 237);
+    --card-icon:linear-gradient(135deg, #2a4a6a, #1a3a5a);
 
     /*Text Color*/
     --text-white: #fff;
@@ -14,6 +16,7 @@
     /*Background Colors*/
     --bg-dark: black;
     --bg-gradient: rgba(0, 0, 0, 0.800);
+    --bg-card:rgba(10, 30, 50, 0.5);
 
     /*Link Colors*/
     --btn-gray: #333;
@@ -25,6 +28,8 @@
     /*Border Colors*/
     --overlay-gradient: #0001;
     --overlay-solid: #000;
+
+    --hero-black:rgb(10, 13, 20);
 }
 
 *{
@@ -34,11 +39,11 @@ body{
     font-family: 'Segoe UI', 'Open Sans','Verdana', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: radial-gradient(circle, var(--bg-gradient), var(--bg-dark));
+    background: var(--hero-black);
 }
 .header{
     padding: 1rem 0;
-    background: var(--border-transparent);
+    background: var(--bg-gradient);
     border-bottom: 1px solid var(--border-transparent);
     position: sticky;
     top: 0;
@@ -110,5 +115,97 @@ span{
 .btn-primary:hover{
     background: var(--btn-gray-hover);
 }
+h1{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.subtitle{
+    color: var(--text-active);
+    justify-content: center;
+    text-align: center;
+}
+.hero{
+    background: var(--hero-black);
+}
+.our-story-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: var(--hero-black);
+    color: var(--text-active);
+}
+.story-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.story-content h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.story-content p{
+    color: var(--text-active);
+    font-size: 1.125rem;
+    font-weight: 200;
+}
+.future-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--bg-card);
+}
+.future-content h3{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+.future-content p{
+    color: var(--text-active);
+    font-weight: 200;
+    max-width: 90%;
+}
+.mine{
+    background: var(--bg-dark);
+}
+.mission-vision-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Makes grid to work like flex*/
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+    max-width: 1400px;
+}
+.card{
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 2px solid var(--bg-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-icon{
+    width: 70px;
+    height: 70px;
+    background: var(--card-icon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 
