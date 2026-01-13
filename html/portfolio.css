@@ -1,0 +1,131 @@
+:root {
+    --primary-blue: #007bff;
+
+    /*Box-shadows*/
+    --dark-blue: rgb(4, 4, 197);
+    --box-shadow:rgb(117, 117, 237);
+    --card-icon:linear-gradient(135deg, #2a4a6a, #1a3a5a);
+
+    /*Text Color*/
+    --text-white: #fff;
+    --text-light: #cdc6c6;
+    --text-muted: #988f8f;
+    --text-dark: #333;
+    --text-active: #f1efef;
+
+    /*Background Colors*/
+    --bg-dark: black;
+    --bg-gradient: rgba(0, 0, 0, 0.800);
+    --bg-card:rgba(10, 30, 50, 0.5);
+
+    /*Link Colors*/
+    --btn-gray: #333;
+    --btn-gray-hover: #454343;
+
+    /*Header background*/
+    --border-transparent: transparent;
+
+    /*Border Colors*/
+    --overlay-gradient: #0001;
+    --overlay-solid: #000;
+
+    --hero-black:rgb(10, 13, 20);
+}
+
+*{
+    color: var(--text-white);
+}
+body{
+    font-family: 'Segoe UI', 'Open Sans','Verdana', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--hero-black);
+}
+.header{
+    padding: 1rem 0;
+    background: var(--bg-gradient);
+    border-bottom: 1px solid var(--border-transparent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+div{
+    border-image: fill 0 linear gradient(var(--overlay-gradient), var(--overlay-solid));
+}
+.header-content{
+    display: flex;/*Aligns elements on the same line*/
+    gap: 500px;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;/*Gap between logo and company name*/
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: blue;
+    margin-left: 5%;
+}
+.header-actions{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+span{
+    color: var(--dark-blue);
+}
+.btn-text{
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative; /* Added to fix the underline position issue */
+}
+.btn-text::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px; /* Added thickness */
+    left: 0;     /* Added alignment */
+    bottom: -5px;
+    background-color: var(--primary-blue);
+    transition: width 0.5s ease;
+}
+
+/* Hover Effect: The line "draws" out */
+.btn-text:hover::after {
+    width: 100%;
+}
+.btn-text.active {
+    color: var(--primary-blue);
+}
+
+.btn-text.active::after {
+    width: 0%;
+}
+.btn-primary{
+    background: var(--btn-gray);
+    color: var(--text-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+.btn-primary:hover{
+    background: var(--btn-gray-hover);
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.subtitle{
+    color: var(--text-active);
+    justify-content: center;
+    text-align: center;
+}
+.hero{
+    background: var(--hero-black);
+}
