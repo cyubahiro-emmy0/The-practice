@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoMarket - Cryptocurrency Prices, Charts And Market Capitalizations</title>
+    <link rel="stylesheet" href="coinmarketcap.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" fill="#3861FB"/>
+                        <path d="M16 8L12 16L16 12L20 16L16 8Z" fill="white"/>
+                        <path d="M16 24L20 16L16 20L12 16L16 24Z" fill="white"/>
+                    </svg>
+                    <span class="logo-text">CryptoMarket</span>
+                </div>
+                <nav class="nav">
+                    <a href="#" class="nav-link">Cryptocurrencies</a>
+                    <a href="#" class="nav-link">Exchanges</a>
+                    <a href="#" class="nav-link">NFT</a>
+                    <a href="#" class="nav-link">Portfolio</a>
+                    <a href="#" class="nav-link">Watchlist</a>
+                    <a href="#" class="nav-link">Products</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="btn-search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                        <path d="M21 21L16.65 16.65" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-label">Cryptos:</span>
+                <span class="stat-value">2.4M+</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Exchanges:</span>
+                <span class="stat-value">758</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Market Cap:</span>
+                <span class="stat-value">$2.51T</span>
+                <span class="stat-change positive">+2.14%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">24h Vol:</span>
+                <span class="stat-value">$95.2B</span>
+                <span class="stat-change negative">-8.42%</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Dominance:</span>
+                <span class="stat-value">BTC: 51.2% ETH: 16.8%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="page-header">
+                <h1>Today's Cryptocurrency Prices by Market Cap</h1>
+                <p class="subtitle">The global cryptocurrency market cap today is $2.51 Trillion, a <span class="positive">2.14%</span> change in the last 24 hours.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">DeFi</button>
+                    <button class="filter-tab">NFT & Metaverse</button>
+                    <button class="filter-tab">Meme</button>
+                    <button class="filter-tab">Gaming</button>
+                </div>
+                <div class="filter-actions">
+                    <button class="filter-btn">Top Gainers</button>
+                    <button class="filter-btn">Trending</button>
+                    <button class="filter-btn">Recently Added</button>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table class="crypto-table">
+                    <thead>
+                        <tr>
+                            <th class="th-rank">#</th>
+                            <th class="th-name">Name</th>
+                            <th class="th-price">Price</th>
+                            <th class="th-change">1h %</th>
+                            <th class="th-change">24h %</th>
+                            <th class="th-change">7d %</th>
+                            <th class="th-marketcap">Market Cap</th>
+                            <th class="th-volume">Volume(24h)</th>
+                            <th class="th-supply">Circulating Supply</th>
+                            <th class="th-chart">Last 7 Days</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="td-rank">1</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon btc">₿</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Bitcoin</span>
+                                        <span class="coin-abbr">BTC</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$96,847.52</td>
+                            <td class="td-change positive">+0.45%</td>
+                            <td class="td-change positive">+2.87%</td>
+                            <td class="td-change positive">+5.23%</td>
+                            <td class="td-marketcap">$1,917,234,567,890</td>
+                            <td class="td-volume">$45,234,567,890</td>
+                            <td class="td-supply">
+                                <div class="supply-info">19.8M BTC</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive">📈</div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">2</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon eth">Ξ</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Ethereum</span>
+                                        <span class="coin-abbr">ETH</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$3,645.28</td>
+                            <td class="td-change negative">-0.12%</td>
+                            <td class="td-change positive">+1.45%</td>
+                            <td class="td-change positive">+3.67%</td>
+                            <td class="td-marketcap">$438,456,789,123</td>
+                            <td class="td-volume">$23,456,789,012</td>
+                            <td class="td-supply">
+                                <div class="supply-info">120.3M ETH</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">3</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon usdt">₮</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Tether</span>
+                                        <span class="coin-abbr">USDT</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$1.00</td>
+                            <td class="td-change neutral">+0.01%</td>
+                            <td class="td-change neutral">+0.00%</td>
+                            <td class="td-change neutral">+0.02%</td>
+                            <td class="td-marketcap">$138,234,567,890</td>
+                            <td class="td-volume">$67,890,123,456</td>
+                            <td class="td-supply">
+                                <div class="supply-info">138.2B USDT</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart neutral">─</div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">4</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon bnb">B</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">BNB</span>
+                                        <span class="coin-abbr">BNB</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$672.45</td>
+                            <td class="td-change positive">+0.89%</td>
+                            <td class="td-change positive">+4.23%</td>
+                            <td class="td-change positive">+8.45%</td>
+                            <td class="td-marketcap">$97,234,567,890</td>
+                            <td class="td-volume">$2,345,678,901</td>
+                            <td class="td-supply">
+                                <div class="supply-info">144.7M BNB</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">5</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon sol">◎</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Solana</span>
+                                        <span class="coin-abbr">SOL</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$245.67</td>
+                            <td class="td-change negative">-1.23%</td>
+                            <td class="td-change positive">+6.78%</td>
+                            <td class="td-change positive">+12.34%</td>
+                            <td class="td-marketcap">$123,456,789,012</td>
+                            <td class="td-volume">$4,567,890,123</td>
+                            <td class="td-supply">
+                                <div class="supply-info">502.5M SOL</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">6</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon xrp">X</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">XRP</span>
+                                        <span class="coin-abbr">XRP</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$2.34</td>
+                            <td class="td-change positive">+0.67%</td>
+                            <td class="td-change positive">+3.45%</td>
+                            <td class="td-change negative">-2.12%</td>
+                            <td class="td-marketcap">$134,567,890,123</td>
+                            <td class="td-volume">$3,456,789,012</td>
+                            <td class="td-supply">
+                                <div class="supply-info">57.5B XRP</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart negative"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">7</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon usdc">$</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">USD Coin</span>
+                                        <span class="coin-abbr">USDC</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$1.00</td>
+                            <td class="td-change neutral">+0.00%</td>
+                            <td class="td-change neutral">+0.01%</td>
+                            <td class="td-change neutral">-0.01%</td>
+                            <td class="td-marketcap">$42,345,678,901</td>
+                            <td class="td-volume">$8,901,234,567</td>
+                            <td class="td-supply">
+                                <div class="supply-info">42.3B USDC</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart neutral">─</div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">8</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon ada">₳</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Cardano</span>
+                                        <span class="coin-abbr">ADA</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$1.07</td>
+                            <td class="td-change positive">+1.23%</td>
+                            <td class="td-change positive">+5.67%</td>
+                            <td class="td-change positive">+9.87%</td>
+                            <td class="td-marketcap">$38,456,789,012</td>
+                            <td class="td-volume">$1,234,567,890</td>
+                            <td class="td-supply">
+                                <div class="supply-info">35.9B ADA</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">9</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon doge">Ð</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">Dogecoin</span>
+                                        <span class="coin-abbr">DOGE</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$0.3856</td>
+                            <td class="td-change negative">-0.45%</td>
+                            <td class="td-change positive">+2.34%</td>
+                            <td class="td-change positive">+7.89%</td>
+                            <td class="td-marketcap">$56,789,012,345</td>
+                            <td class="td-volume">$2,890,123,456</td>
+                            <td class="td-supply">
+                                <div class="supply-info">147.3B DOGE</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart positive"></div>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="td-rank">10</td>
+                            <td class="td-name">
+                                <div class="coin-name">
+                                    <div class="coin-icon trx">T</div>
+                                    <div class="coin-info">
+                                        <span class="coin-symbol">TRON</span>
+                                        <span class="coin-abbr">TRX</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="td-price">$0.2456</td>
+                            <td class="td-change positive">+0.78%</td>
+                            <td class="td-change positive">+3.21%</td>
+                            <td class="td-change negative">-1.56%</td>
+                            <td class="td-marketcap">$21,234,567,890</td>
+                            <td class="td-volume">$987,654,321</td>
+                            <td class="td-supply">
+                                <div class="supply-info">86.5B TRX</div>
+                            </td>
+                            <td class="td-chart">
+                                <div class="mini-chart negative"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn">← Previous</button>
+                <div class="pagination-pages">
+                    <button class="pagination-page active">1</button>
+                    <button class="pagination-page">2</button>
+                    <button class="pagination-page">3</button>
+                    <button class="pagination-page">4</button>
+                    <button class="pagination-page">5</button>
+                    <span>...</span>
+                    <button class="pagination-page">100</button>
+                </div>
+                <button class="pagination-btn">Next →</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <a href="#">Blockchain Explorer</a>
+                <a href="#">Crypto API</a>
+                <a href="#">Crypto Indices</a>
+                <a href="#">Jobs Board</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Community Rules</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Request Form</a>
+                <a href="#">Contact Support</a>
+                <a href="#">FAQ</a>
+                <a href="#">Glossary</a>
+            </div>
+            <div class="footer-section">
+                <h4>Socials</h4>
+                <a href="#">Twitter</a>
+                <a href="#">Telegram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CryptoMarket. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

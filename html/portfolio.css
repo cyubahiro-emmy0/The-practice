@@ -128,4 +128,11 @@ h1{
 }
 .hero{
     background: var(--hero-black);
+    padding: 9% 0 3rem;
+}
+.hero h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }

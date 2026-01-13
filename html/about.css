@@ -56,6 +56,8 @@ div{
     display: flex;/*Aligns elements on the same line*/
     gap: 500px;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .logo{
     display: flex;

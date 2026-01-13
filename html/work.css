@@ -14,6 +14,7 @@
     --overlay-gradient: #0001;
     --overlay-solid: #000;
     --bg-header:rgb(26, 26, 26);
+    --hero-black:rgb(10, 13,20);
 }
 
 *{
@@ -29,7 +30,7 @@ body{
     font-family: 'Segoe UI', 'Open Sans','Verdana', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: radial-gradient(circle, var(--bg-gradient), var(--bg-dark));
+    background: var(--hero-black);
 }
 span{
     color: var(--dark-blue);
@@ -52,7 +53,7 @@ span{
 }
 .header{
     padding: 1rem 0;
-    background: var(--bg-header);
+    background: var(--bg-gradient);
     border-bottom: 1px solid var(--border-transparent);
     position: sticky;
     top: 0;
