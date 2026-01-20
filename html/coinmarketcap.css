@@ -129,6 +129,7 @@ body {
 
 .btn-icon {
     display: flex;
+    text-decoration: none;
     align-items: center;
     gap: var(--spacing-xs);
     padding: var(--spacing-sm) var(--spacing-md);
