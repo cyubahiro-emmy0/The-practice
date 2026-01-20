@@ -19,7 +19,7 @@
             <button class="tab active">Log In</button>
         </div>
         
-        <form class="login-form">
+        <form class="login-form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input 
@@ -39,6 +39,7 @@
                     <input 
                         type="password" 
                         id="password" 
+                        pattern="[a-zA-Z] {8}"
                         placeholder="Enter your password..."
                         required
                     >
